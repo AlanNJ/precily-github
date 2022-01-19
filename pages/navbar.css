@@ -1,0 +1,29 @@
+.navbar {
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid black;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	background-color: #975fff;
+	position: sticky;
+	color: white;
+}
+.navbar li {
+	font-size: 30px;
+	list-style: none;
+	cursor: pointer;
+}
+.dashboard {
+	background-color: none;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 768px) {
+	.navbar {
+		padding: 0;
+	}
+	.navbar li {
+		font-size: 25px;
+		list-style: none;
+	}
+}
