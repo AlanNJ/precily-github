@@ -14,7 +14,7 @@ export const Bottom = (props) => {
 	const [updatedPost, setUpdatedPost] = useState();
 	useEffect(() => {
 		getAllPost();
-	}, [post]);
+	}, []);
 	const getAllPost = async () => {
 		const response = await axios.get(
 			"https://precily-dev-team.herokuapp.com/post/get-post"
@@ -25,9 +25,12 @@ export const Bottom = (props) => {
 		if (!content) {
 			toast.error("Please Enter the name of the repo");
 		} else {
-			const data = await axios.post("http://localhost:8000/post/repo", {
-				content,
-			});
+			const data = await axios.post(
+				"https://precily-dev-team.herokuapp.com/post/repo",
+				{
+					content,
+				}
+			);
 			setContent("");
 			getAllPost();
 			toast.success("Repository Added Successfully");
@@ -36,7 +39,7 @@ export const Bottom = (props) => {
 
 	const deletePost = async (id) => {
 		const res = await axios.delete(
-			`http://localhost:8000/post/delete-post/${id}`
+			`https://precily-dev-team.herokuapp.com/post/delete-post/${id}`
 		);
 		console.log(res.data);
 		setPost([res.data]);
@@ -44,7 +47,7 @@ export const Bottom = (props) => {
 	};
 	const getPostToUpdate = async (id) => {
 		const res = await axios.get(
-			`http://localhost:8000/post/get-single-post/${id}`
+			`https://precily-dev-team.herokuapp.com/post/update-post/${id}`
 		);
 		setUpdate(true);
 		setCurrentPost(res.data.post);
@@ -55,7 +58,7 @@ export const Bottom = (props) => {
 			toast.error("please enter updated name");
 		} else {
 			const res = await axios.put(
-				`http://localhost:8000/post/update-post/${currentPost._id}`,
+				`https://precily-dev-team.herokuapp.com/post/update-post/${currentPost._id}`,
 				{ updatedPost }
 			);
 			console.log(res);

@@ -21,7 +21,7 @@ export const Register = (props) => {
 			toast.error("Please fill all the forms");
 		} else {
 			const data = await axios.post(
-				"https://precily-dev-team.herokuapp.com/register",
+				"https://precily-dev-team.herokuapp.com/api/register",
 				{
 					name,
 					phone,
