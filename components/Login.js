@@ -9,6 +9,9 @@ export const Login = (props) => {
 	const [password, setPassword] = useState();
 	const router = useRouter();
 	const data = { email, password };
+	const [user, setUser] = useState({});
+
+	//function to login the user
 	const loginUser = async (e) => {
 		try {
 			if (!email || !password) {
@@ -23,7 +26,7 @@ export const Login = (props) => {
 			console.log(err);
 		}
 	};
-	const [user, setUser] = useState({});
+
 	useEffect(() => {
 		if (props.user.user !== null) {
 			setUser(props.user);

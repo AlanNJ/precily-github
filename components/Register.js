@@ -16,6 +16,8 @@ export const Register = (props) => {
 	const [loading, setLoading] = useState(false);
 	const [logged, setLogged] = useState("");
 	const router = useRouter();
+
+	//registering the user
 	const loginUser = async () => {
 		if (!name || !phone || !email || !password) {
 			toast.error("Please fill all the forms");

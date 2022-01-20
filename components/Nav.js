@@ -11,17 +11,22 @@ export const Nav = (props) => {
 		props.getInitial();
 	}, [props.user && props.user.user && props.user.user.user]);
 	console.log();
+
+	//logout functionality
 	const emptyUser = () => {
 		props.emptyUser();
 		router.push("/login");
 	};
+
+	//register functionality
 	const register = () => {
 		router.push("/");
 	};
+
+	//login functionalitty
 	const login = () => {
 		router.push("/login");
 	};
-	//console.log(props.user.user);
 
 	return (
 		<div className="navbar">

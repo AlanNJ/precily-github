@@ -108,17 +108,19 @@ const Nav = (props)=>{
         props.user && props.user.user && props.user.user.user
     ]);
     console.log();
+    //logout functionality
     const emptyUser1 = ()=>{
         props.emptyUser();
         router.push("/login");
     };
+    //register functionality
     const register = ()=>{
         router.push("/");
     };
+    //login functionalitty
     const login = ()=>{
         router.push("/login");
     };
-    //console.log(props.user.user);
     return(/*#__PURE__*/ jsx_runtime_.jsx("div", {
         className: "navbar",
         children: props.user && props.user.user ? /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {

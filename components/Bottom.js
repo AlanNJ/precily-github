@@ -6,21 +6,26 @@ import { MdSecurityUpdate, MdUpdate } from "react-icons/md";
 import { toast } from "react-toastify";
 
 export const Bottom = (props) => {
-	var count = 0;
+	// dectalring our states
 	const [content, setContent] = useState();
 	const [post, setPost] = useState([]);
 	const [currentPost, setCurrentPost] = useState(null);
 	const [update, setUpdate] = useState(false);
 	const [updatedPost, setUpdatedPost] = useState();
+
 	useEffect(() => {
 		getAllPost();
 	}, []);
+
+	//function to get list of all posts present in database
 	const getAllPost = async () => {
 		const response = await axios.get(
 			"https://precily-dev-team.herokuapp.com/post/get-post"
 		);
 		setPost(response.data);
 	};
+
+	//fuction to add the repository in the database
 	const addRepo = async (id) => {
 		if (!content) {
 			toast.error("Please Enter the name of the repo");
@@ -37,6 +42,7 @@ export const Bottom = (props) => {
 		}
 	};
 
+	//function to delete the post on click
 	const deletePost = async (id) => {
 		const res = await axios.delete(
 			`https://precily-dev-team.herokuapp.com/post/delete-post/${id}`
@@ -46,6 +52,8 @@ export const Bottom = (props) => {
 		toast.success("Repository Deleted Successfully");
 		getAllPost();
 	};
+
+	//function to trigger which post to update
 	const getPostToUpdate = async (id) => {
 		const res = await axios.get(
 			`https://precily-dev-team.herokuapp.com/post/get-single-post/${id}`
@@ -54,6 +62,7 @@ export const Bottom = (props) => {
 		setCurrentPost(res.data.post);
 	};
 
+	//function to update the triggered post
 	const updatePost = async (e, id) => {
 		if (!updatedPost) {
 			toast.error("please enter updated name");

@@ -20,6 +20,7 @@ const getInitialData = (data) => {
 	};
 };
 
+// action for logging In User
 export const getUser = (data) => {
 	return (dispatch) => {
 		try {
@@ -38,6 +39,7 @@ export const getUser = (data) => {
 		}
 	};
 };
+// action for logout
 export const emptyUser = () => {
 	console.log("hello");
 	return (dispatch) => {
@@ -45,6 +47,7 @@ export const emptyUser = () => {
 		dispatch(emptyData(null));
 	};
 };
+// action for getting data initially when page loads
 export const getInitial = () => {
 	return (dispatch) => {
 		const data = window.localStorage.getItem("login");

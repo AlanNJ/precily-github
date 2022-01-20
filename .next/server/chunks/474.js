@@ -37,6 +37,7 @@ const getInitialData = (data)=>{
         payload: data
     };
 };
+// action for logging In User
 const getUser = (data)=>{
     return (dispatch)=>{
         try {
@@ -53,6 +54,7 @@ const getUser = (data)=>{
         }
     };
 };
+// action for logout
 const emptyUser = ()=>{
     console.log("hello");
     return (dispatch)=>{
@@ -60,6 +62,7 @@ const emptyUser = ()=>{
         dispatch(emptyData(null));
     };
 };
+// action for getting data initially when page loads
 const getInitial = ()=>{
     return (dispatch)=>{
         const data = window.localStorage.getItem("login");
