@@ -44,19 +44,21 @@ export const Bottom = (props) => {
 		console.log(res.data);
 		setPost([res.data]);
 		toast.success("Repository Deleted Successfully");
+		getAllPost();
 	};
 	const getPostToUpdate = async (id) => {
 		const res = await axios.get(
-			`https://precily-dev-team.herokuapp.com/post/update-post/${id}`
+			`https://precily-dev-team.herokuapp.com/post/get-single-post/${id}`
 		);
 		setUpdate(true);
 		setCurrentPost(res.data.post);
 	};
 
-	const updatePost = async (id) => {
+	const updatePost = async (e, id) => {
 		if (!updatedPost) {
 			toast.error("please enter updated name");
 		} else {
+			e.preventDefault();
 			const res = await axios.put(
 				`https://precily-dev-team.herokuapp.com/post/update-post/${currentPost._id}`,
 				{ updatedPost }
