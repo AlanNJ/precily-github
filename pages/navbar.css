@@ -9,6 +9,7 @@
 	background-color: #975fff;
 	position: sticky;
 	color: white;
+	transition: 0.2s ease-in;
 }
 .navbar li {
 	font-size: 30px;
