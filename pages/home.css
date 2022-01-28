@@ -7,6 +7,9 @@
 .first-section {
 	display: flex;
 }
+.second-section {
+	position: absolute;
+}
 .home-container h3 {
 	position: relative;
 	left: 50%;
