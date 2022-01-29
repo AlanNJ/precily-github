@@ -9,6 +9,7 @@
 }
 .second-section {
 	position: absolute;
+	transform: translateX(-50%);
 }
 .home-container h3 {
 	position: relative;
