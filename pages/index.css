@@ -13,6 +13,9 @@
 	left: 50%;
 	transform: translate(-50%, 0);
 }
+.left-bar {
+	position: relative;
+}
 input {
 	all: unset;
 	width: 250px;
