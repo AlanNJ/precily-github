@@ -15,6 +15,7 @@
 }
 .left-bar {
 	position: relative;
+	opacity: 0.4;
 }
 input {
 	all: unset;
