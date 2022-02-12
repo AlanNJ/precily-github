@@ -22,7 +22,9 @@ export const home = (props) => {
 	}, [post.length]);
 
 	const getAllPost = async () => {
-		const response = await axios.get("http://localhost:8000/post/get-post");
+		const response = await axios.get(
+			"https://precily-dev-team.herokuapp.com/post/get-post"
+		);
 		setPost(response.data);
 	};
 
