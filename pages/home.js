@@ -30,7 +30,7 @@ export const home = (props) => {
 
 	return (
 		<>
-			<div className="home-container">
+			<div className="home-container box">
 				<div className="first-section">
 					<LeftSide user={props.user} />
 					<Main />
